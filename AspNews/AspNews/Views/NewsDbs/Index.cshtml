@@ -1,0 +1,95 @@
+﻿@model IEnumerable<AspNews.Models.cjl.NewsDb>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RankID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewsDescribed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewsWriter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewsTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewsSource)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewsKeywords)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleaseTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewsContent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageURL)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.ReadingNum)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <img src="~/@item.ImageURL"/>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RankID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewsDescribed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewsWriter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewsTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewsSource)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewsKeywords)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReleaseTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewsContent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageURL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReadingNum)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NewsId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NewsId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NewsId })
+        </td>
+    </tr>
+}
+
+</table>

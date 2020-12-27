@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AspNews.Models.cjl.RankDb>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RankName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RankDescribed)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RankName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RankDescribed)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RankID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RankID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RankID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,50 @@
+﻿@model AspNews.Models.cjl.CommentDb
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CommentDb</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NewsDb.NewsDescribed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewsDb.NewsDescribed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommentContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommentTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CommentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

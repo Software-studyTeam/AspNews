@@ -1,0 +1,106 @@
+﻿@model AspNews.Models.cjl.NewsDb
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NewsDb</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RankID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RankID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewsDescribed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewsDescribed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewsWriter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewsWriter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewsTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewsTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewsSource)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewsSource)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewsKeywords)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewsKeywords)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleaseTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReleaseTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewsContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewsContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReadingNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReadingNum)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NewsId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

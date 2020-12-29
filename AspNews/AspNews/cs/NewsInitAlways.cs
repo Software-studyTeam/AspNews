@@ -56,7 +56,7 @@ namespace AspNews.cs
             var NewsDb = new List<NewsDb>
              {
                 new NewsDb { NewsId = "1" ,  TypeID =9 , RankID =3 , NewsDescribed = "26日起，2021年全国硕士研究生招生考试将举行，本次考试报考人数达到377万人，创历史新高。在疫情防控的大背景下，各地就本次考试的防疫措施进行了部署。同时，教育部也强调，坚决维护研招考试公平公正，并公布考试违规违法行为举报电话。"  , NewsWriter = "邢斯馨"   , NewsTitle = "2021考研开考：377万人报名 各地强调考场防疫"  , NewsSource = "中国新闻网"   , NewsKeywords = "考试报名,考场纪律"   , ReleaseTime = DateTime.Parse("2020-12-26")   , 
-                             NewsContent = "无"   , ImageURL = "Image/News/new001.jpg"   , ReadingNum = 100000  },
+                             NewsContent = "无", ImageURL = "Image/News/new001.jpg"   , ReadingNum = 100000  },
                 new NewsDb { NewsId = "2" ,  TypeID =9 , RankID =4 , NewsDescribed = "记者25日获悉，教育部今天召开视频调度会议，研究部署今冬明春教育系统疫情防控工作提出，今冬明春是疫情防控的关键时期，教育系统要科学精准做好寒假期间疫情防控工作，确保春季学期高校错峰开学，妥善安排留校师生学习和生活。"      , NewsWriter = "邢斯馨"  , NewsTitle = "教育部要求确保春季学期高校错峰开学" , NewsSource = "新华社“新华视点”微博"  , NewsKeywords = "错峰,开学,教育部"  , ReleaseTime = DateTime.Parse("2020-12-25")  , 
                              NewsContent = "无"  , ImageURL = "E:\\AspNews\\AspNews\\Image\\NewsImage\\News2"  , ReadingNum = 100000  },
                 new NewsDb { NewsId = "3" ,  TypeID =2 , RankID =4 , NewsDescribed = "广东海警局近日联合多地海关缉私部门成功打掉5个长期活跃在广东海域的走私成品油团伙。初步查证涉案柴油约16万吨，案值约8亿元，涉嫌偷逃税款约4亿元。"  , NewsWriter = "谢博韬"   , NewsTitle = "中国海警破获特大涉嫌走私成品油案 案值约8亿元"  , NewsSource = "新华网"   , NewsKeywords = "中国海警,走私,成品油"  , ReleaseTime = DateTime.Parse("2020-12-26")   , 

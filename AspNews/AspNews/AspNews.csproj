@@ -148,6 +148,7 @@
     <Compile Include="Controllers\RightDbsController.cs" />
     <Compile Include="Controllers\TypeDbsController.cs" />
     <Compile Include="Controllers\UserDbsController.cs" />
+    <Compile Include="Controllers\XGJNewsContentController.cs" />
     <Compile Include="cs\NewsInit.cs" />
     <Compile Include="cs\NewsInitAlways.cs" />
     <Compile Include="Global.asax.cs">
@@ -213,9 +214,13 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Image\News\new001.jpg" />
+    <Content Include="Image\XGJImages\bg.jpg" />
+    <Content Include="Image\XGJImages\rockets.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\home.css" />
+    <Content Include="Scripts\home.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -230,6 +235,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\news.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -244,37 +250,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\CommentDbs\Create.cshtml" />
-    <Content Include="Views\CommentDbs\Delete.cshtml" />
-    <Content Include="Views\CommentDbs\Details.cshtml" />
-    <Content Include="Views\CommentDbs\Edit.cshtml" />
-    <Content Include="Views\CommentDbs\Index.cshtml" />
     <Content Include="Views\NewsDbs\Create.cshtml" />
     <Content Include="Views\NewsDbs\Delete.cshtml" />
     <Content Include="Views\NewsDbs\Details.cshtml" />
     <Content Include="Views\NewsDbs\Edit.cshtml" />
     <Content Include="Views\NewsDbs\Index.cshtml" />
-    <Content Include="Views\RankDbs\Create.cshtml" />
-    <Content Include="Views\RankDbs\Delete.cshtml" />
-    <Content Include="Views\RankDbs\Details.cshtml" />
-    <Content Include="Views\RankDbs\Edit.cshtml" />
-    <Content Include="Views\RankDbs\Index.cshtml" />
-    <Content Include="Views\RightDbs\Create.cshtml" />
-    <Content Include="Views\RightDbs\Delete.cshtml" />
-    <Content Include="Views\RightDbs\Details.cshtml" />
-    <Content Include="Views\RightDbs\Edit.cshtml" />
-    <Content Include="Views\RightDbs\Index.cshtml" />
-    <Content Include="Views\TypeDbs\Create.cshtml" />
-    <Content Include="Views\TypeDbs\Delete.cshtml" />
-    <Content Include="Views\TypeDbs\Details.cshtml" />
-    <Content Include="Views\TypeDbs\Edit.cshtml" />
-    <Content Include="Views\TypeDbs\Index.cshtml" />
-    <Content Include="Views\UserDbs\Create.cshtml" />
-    <Content Include="Views\UserDbs\Delete.cshtml" />
-    <Content Include="Views\UserDbs\Details.cshtml" />
-    <Content Include="Views\UserDbs\Edit.cshtml" />
-    <Content Include="Views\UserDbs\Index.cshtml" />
     <Content Include="Views\Home\InitNews.cshtml" />
+    <Content Include="Views\XGJNewsContent\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

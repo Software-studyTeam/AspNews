@@ -24,5 +24,7 @@ namespace AspNews.Models.cjl
         [Display(Name = "等级描述")]
         [StringLength(50)]
         public string RankDescribed { get; set; }
+
+        public virtual ICollection<NewsDb> NewsDb { get; set; }
     }
 }

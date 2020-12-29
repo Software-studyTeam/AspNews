@@ -35,6 +35,5 @@ namespace AspNews.Models.cjl
 
         public virtual UserDb UserDb { set; get; }
         public virtual NewsDb NewsDb { set; get; }
-        public virtual ICollection<UserDb> UserDbs { get; set; }
     }
 }

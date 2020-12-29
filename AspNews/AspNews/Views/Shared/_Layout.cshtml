@@ -28,17 +28,18 @@
                     <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
                     <li> @Html.ActionLink("新闻目录", "Index", "NewsDbs")</li>
                     <li>@Ajax.ActionLink("初始化数据", "InitNews", "Home", new { }, ajaxOptions,new { @class= "list-group-item" })</li>
+                    <li>@Html.ActionLink("新闻具体详情","Index","XGJNewsContent")</li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container body-content">
+   
         @RenderBody()
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
         </footer>
-    </div>
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

@@ -68,7 +68,6 @@ namespace AspNews.Models.cjl
 
         public virtual TypeDb TypeDb { set; get; }
         public virtual RankDb RankDb { set; get; }
-        public virtual ICollection<TypeDb> TypeDbs { get; set; }
-        public virtual ICollection<RankDb> RankDbs { get; set; }
+
     }
 }

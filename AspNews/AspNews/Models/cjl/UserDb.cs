@@ -31,6 +31,6 @@ namespace AspNews.Models.cjl
 
         [ForeignKey("RightID")]
         public virtual RightDb RightDb { set; get; }
-        public virtual ICollection<RightDb> RightDbs { get; set; }
+        public virtual ICollection<CommentDb> CommentDb { get; set; }
     }
 }

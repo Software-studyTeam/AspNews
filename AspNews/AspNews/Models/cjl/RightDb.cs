@@ -19,6 +19,6 @@ namespace AspNews.Models.cjl
         [Display(Name = "权限名称")]
         [StringLength(20)]
         public string RightName { get; set; }
-
+        public virtual ICollection<UserDb> UserDb { get; set; }
     }
 }

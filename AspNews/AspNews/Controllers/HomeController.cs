@@ -27,10 +27,7 @@ namespace AspNews.Controllers
 
         public ActionResult Index()
         {
-            News db = new News();
-            NewsInitAlways context = new NewsInitAlways();
-            context.InitializeDatabase(db);
-           
+            
             return View();
         }
 

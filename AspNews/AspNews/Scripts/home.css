@@ -4,8 +4,8 @@
     list-style: none;
 }
 
-body {
-    background-image: url(../images/bg.jpg);
+.body-class {
+    background-image: url(~/Image/XGJImages/bg.jpg);
     background-repeat: repeat;
     margin: 0px;
     padding: 0px;
@@ -19,10 +19,10 @@ a {
     color: #fff;
 }
 
-a:focus {
-    outline: none;
-    /*清除轮廓*/
-}
+    a:focus {
+        outline: none;
+        /*清除轮廓*/
+    }
 
 .menuBar {
     width: 100%;
@@ -43,68 +43,68 @@ a:focus {
     margin: 0 auto;
 }
 
-.menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
-.menu ul li {
-    /* width and height of the menu items */
-    float: left;
-    overflow: hidden;
-    position: relative;
-    line-height: 40px;
-    text-align: center;
-}
+        .menu ul li {
+            /* width and height of the menu items */
+            float: left;
+            overflow: hidden;
+            position: relative;
+            line-height: 40px;
+            text-align: center;
+        }
 
-.menu ul li a {
-    /* must be postioned relative  */
-    position: relative;
-    display: block;
-    width: 120px;
-    height: 40px;
-    font-family: "微软雅黑";
-    font-size: 1em;
-    text-decoration: none;
-    cursor: pointer;
-}
+            .menu ul li a {
+                /* must be postioned relative  */
+                position: relative;
+                display: block;
+                width: 120px;
+                height: 40px;
+                font-family: "微软雅黑";
+                font-size: 1em;
+                text-decoration: none;
+                cursor: pointer;
+            }
 
-.menu ul li a span {
-    position: absolute;
-    left: 0;
-    width: 120px;
-}
+                .menu ul li a span {
+                    position: absolute;
+                    left: 0;
+                    width: 120px;
+                }
 
-.menu ul li a span.out {
-    top: 0px;
-}
+                    .menu ul li a span.out {
+                        top: 0px;
+                    }
 
-.menu ul li a span.over {
-    top: -40px;
-}
+                    .menu ul li a span.over {
+                        top: -40px;
+                    }
 
 #menu2 {
     background: #000;
 }
 
-#menu2 ul li a {
-    color: #fff;
-}
+    #menu2 ul li a {
+        color: #fff;
+    }
 
-#menu2 ul li a span.over {
-    color: #000;
-    background-color: #f0f0f0;
-}
+        #menu2 ul li a span.over {
+            color: #000;
+            background-color: #f0f0f0;
+        }
 
-#menu2 img {
-    width: 40px;
-    height: 40px;
-    float: left;
-    position: absolute;
-    left: 130px;
-    top: 0;
-}
+    #menu2 img {
+        width: 40px;
+        height: 40px;
+        float: left;
+        position: absolute;
+        left: 130px;
+        top: 0;
+    }
 
 .login {
     position: absolute;
@@ -139,9 +139,9 @@ a:focus {
     text-align: center z-index: 10;
 }
 
-#text a {
-    color: #fff;
-}
+    #text a {
+        color: #fff;
+    }
 
 .login:hover #shape {
     stroke-dasharray: 50 0;
@@ -159,30 +159,30 @@ a:focus {
     left: 60px;
 }
 
-.banner .img img {
-    width: 600px;
-    height: 340px;
-}
+    .banner .img img {
+        width: 600px;
+        height: 340px;
+    }
 
-.banner .img {
-    width: 5000px;
-    position: absolute;
-    top: 0;
-    /*left: 0px;*/
-}
+    .banner .img {
+        width: 5000px;
+        position: absolute;
+        top: 0;
+        /*left: 0px;*/
+    }
 
-.banner .img li {
-    float: left;
-}
+        .banner .img li {
+            float: left;
+        }
 
-.banner .num {
-    position: absolute;
-    width: 100%;
-    bottom: 10px;
-    left: 180px;
-    text-align: center;
-    font-size: 0px;
-}
+    .banner .num {
+        position: absolute;
+        width: 100%;
+        bottom: 10px;
+        left: 180px;
+        text-align: center;
+        font-size: 0px;
+    }
 
 .newsTitle {
     position: absolute;
@@ -242,20 +242,20 @@ a:focus {
     height: 300px;
 }
 
-.news a.firstA {
-    font-size: 1.5em;
-    cursor: pointer;
-    font-weight: bold;
-    display: inline-block;
-    margin: 20px 0;
-}
+    .news a.firstA {
+        font-size: 1.5em;
+        cursor: pointer;
+        font-weight: bold;
+        display: inline-block;
+        margin: 20px 0;
+    }
 
-.news a {
-    display: inline-block;
-    margin-bottom: 12px;
-    font-size: 1.1em;
-    color: #fff;
-}
+    .news a {
+        display: inline-block;
+        margin-bottom: 12px;
+        font-size: 1.1em;
+        color: #fff;
+    }
 
 a:hover {
     color: #406AFD;
@@ -345,8 +345,7 @@ hr {
     position: fixed;
     bottom: 50px;
     right: 40px;
-    z-index: 10；
-    width: 40px;
+    z-index: 10； width: 40px;
     height: 40px;
     text-align: center;
     line-height: 30px;
@@ -359,7 +358,7 @@ hr {
     border-radius: 5px;
 }
 
-#back-to-top img {
-    width: 40px;
-    height: 40px;
-}
+    #back-to-top img {
+        width: 40px;
+        height: 40px;
+    }

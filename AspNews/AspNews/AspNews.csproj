@@ -149,6 +149,7 @@
     <Compile Include="Controllers\TypeDbsController.cs" />
     <Compile Include="Controllers\UserDbsController.cs" />
     <Compile Include="Controllers\XGJNewsContentController.cs" />
+    <Compile Include="cs\content1.cs" />
     <Compile Include="cs\NewsInit.cs" />
     <Compile Include="cs\NewsInitAlways.cs" />
     <Compile Include="Global.asax.cs">

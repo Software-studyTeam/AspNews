@@ -9,7 +9,7 @@ namespace AspNews.cs
 {
     public class NewsInitAlways:DropCreateDatabaseAlways<News>
     {
-        private content1 c;
+        private content1 c = new content1();
         protected override void Seed(News context)
         {
             var RightDb = new List<RightDb>

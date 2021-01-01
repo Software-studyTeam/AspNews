@@ -24,25 +24,30 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                    <li>@Html.ActionLink("关于", "About", "Home")</li>
-                    <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
-                    <li> @Html.ActionLink("新闻目录", "Index", "NewsDbs")</li>
+                    <li>@Html.ActionLink("经济类", "Index", "LSHnews",new {area = "",id="Laws" },new { @class = "list-group-item"})</li>
+                    <li>@Html.ActionLink("新闻目录", "Index", "NewsDbs")</li>
                     <li>@Ajax.ActionLink("初始化数据", "InitNews", "Home", new { }, ajaxOptions, new { @class = "list-group-item" })</li>
                     <li>@Html.ActionLink("新闻具体详情", "Index", "XGJNewsContent")</li>
+                    <li><a href="#" id="xxxmore" class="list-group-item">更多</a></li>
+
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container-fluid body-content">
+    
+    <div style="padding:0;" class=" container-fluid body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
-        </footer>
-    </div>
 
+
+    </div>
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
+    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 </body>
 </html>

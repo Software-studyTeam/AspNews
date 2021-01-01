@@ -1,44 +1,123 @@
-﻿@{
+﻿@model IEnumerable<AspNews.Models.cjl.NewsDb>
+@{
     ViewBag.Title = "Home Page";
 }
+<script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
 
+<div class="thisbody" style="background: #f5f5f5; background-repeat: repeat; ">
 
-<div>
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
-        <!-- 轮播（Carousel）指标 -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <!-- 轮播（Carousel）项目 -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="~/Image/News/new005.jpg" style=" height:300px ;width:100%" />
-                <div class="carousel-caption">新闻 1</div>
+    <link href="~/Scripts/css/home.css" rel="stylesheet" type="text/css" />
+    <div class="allcontent">
+        <div class="mycontent">
+            <!--轮播图-->
+            <div class="banner">
+                <ul class="img">
+                    <li>
+                        <a href="detailed news/news11.html"><img src="~/Image/News/new001.jpg"><span class="newsTitle" style="left: 30px">柯洁发布会哽咽:很抱歉我输了 希望自己能做得更好</span></a>
+                    </li>
+                    <li>
+                        <a href="detailed news/news12.html"><img src="~/Image/News/new002.jpg"><span class="newsTitle" style="left: 630px">勇士约战骑士：又见面了！</span></a>
+                    </li>
+                    <li>
+                        <a href="detailed news/news13.html"><img src="~/Image/News/new003.jpg"><span class="newsTitle" style="left: 1230px">西甲-皇马2-0夺取队史第33冠 C罗本泽马破门</span></a>
+                    </li>
+                    <li>
+                        <a href="detailed news/news14.html"><img src="~/Image/News/new004.jpg"><span class="newsTitle" style="left: 1830px">为什么众多科幻片都偏爱“最后的幸存者”</span></a>
+                    </li>
+                    <li>
+                        <a href="detailed news/news15.html"><img src="~/Image/News/new005.jpg"><span class="newsTitle" style="left: 2430px">为了找到好用的扫描应用，我试了这几款 App</span></a>
+                    </li>
+                    <li>
+                        <a href="detailed news/news16.html"><img src="~/Image/News/new006.jpg" alt="普京：俄美关系处于冷战以来最低点，俄仍愿发展合作伙伴关系"><span class="newsTitle" style="left: 3030px">普京：俄美关系处于冷战以来最低点，俄仍愿发展合作伙伴关系</span></a>
+                    </li>
+                    <li>
+                        <a href="detailed news/news17.html"><img src="~/Image/News/new007.jpg"><span class="newsTitle" style="left: 3630px">张译：对于《鸡毛飞上天》，我一开始是推掉的</span></a>
+                    </li>
+                </ul>
+                <ul class="num">
+                </ul>
+                <div class="btn btn_l">&lt;</div>
+                <div class="btn btn_r">&gt;</div>
             </div>
-            <div class="item">
-                <img src="~/Image/News/new007.jpg" alt="Second slide" style="height:300px ;width:100%" />
-                <div class="carousel-caption">新闻 2</div>
-            </div>
-            <div class="item">
-                <img src="~/Image/News/new006.jpg" alt="Third slide" style="height:300px ;width:auto" />
-                <div class="carousel-caption">新闻 3</div>
+            <div class="news">
+                <a class="firstA" href="detailed news/news1.html">习近平数赞屈原，民族精神为中国梦“塑心”“聚能”</a>
+                <br>
+                <ul>
+                    <li>
+                        <a href="detailed news/news14.html">为什么众多科幻片都偏爱“最后的幸存者”</a>|&nbsp&nbsp<a href="detailed news/news3.html">加勒比海盗，系列不死，只是烂掉</a>
+                        <br>
+                    </li>
+                </ul>
+                <a href="detailed news/news4.html">夺冠≠进欧冠!欧洲各联赛冠军出炉 你认识几个?</a>
+                <br>
+                <a href="detailed news/news5.html">娱乐：《新歌声》周杰伦表白陈奕迅：我们相爱未相杀</a>
+                <br>
+                <a href="detailed news/news6.html">明家联合起诉4家乐视系公司 拖欠超6000万广告款</a>
+                <br>
+                <a href="detailed news/news7.html">快讯丨日本众院全体会议表决通过天皇退位特例法案</a>
+                <br>
+                <a href="detailed news/news8.html">观点：“赵云拒嫂”：赵云为何不娶有“倾城之色”的美女为妻</a>
+                <ul>
+                    <li>
+                        <a href="detailed news/news9.html">共享单车，路在何方?&nbsp</a>|&nbsp&nbsp<a href="detailed news/news10.html">神奇女侠穿超短裙也能拯救世界</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <!-- 轮播（Carousel）导航 -->
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-
     </div>
-    @Html.ActionLink("nihao", "abc", "Home")
+
+    <hr>
+
+    <div class="mainContent" id="mainContent">
+        <div style="font-size:40px;font-weight:200;"><span>新闻速递</span></div>
+        <div class="con">
+            <ul class="newsList">
+                @foreach (var item in Model)
+                {
+                    <li class="xxxmylist">
+                        <div class="image">
+                            <a href="/XGJNewsContent/Index/@item.NewsId">
+
+                                <img src="~/@item.ImageURL" />
+                            </a>
+                        </div>
+                        <div class="text-con">
+
+                            <h3 class="title"><a target="_blank" href="/XGJNewsContent/Index/@item.NewsId">@item.NewsTitle</a></h3>
+                            <p class="brief">
+                                <a href="/XGJNewsContent/Index/@item.NewsId" target="_blank">
+                                    @item.NewsDescribed
+                                </a>
+                            </p>
+                            <div class="bottom1">
+                                <span class="date">@item.ReleaseTime</span>
+                                <span class="keywords">@item.NewsKeywords.Replace(',', ' ')</span>
+                            </div>
+                        </div>
+                    </li>
+
+                }
+    
+            </ul>
+
+        </div>
+    </div>
+
+    <a href="#" id="back-to-top" title="回到顶部"><img src="~/Image/XGJImages/rockets.png"></a>
+    <script src="~/Scripts/home.js">
+    </script>
+    <script>
+
+        $(".xxxmylist").mouseenter(function () {
+            $(this).css("background-color", "#F8F8FF");
+        });
+
+
+
+        $(".xxxmylist").mouseleave(function () {
+            $(this).css("background-color", "#ffffff");
+        });
+
+
+    </script>
 </div>

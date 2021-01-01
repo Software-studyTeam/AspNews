@@ -13,7 +13,11 @@ namespace AspNews.Controllers
         // GET: XGJNewsContent
         public ActionResult Index(string id)
         {
-            NewsDb testnews = db.NewsDb.Find("1");
+            if (id == "" || id == null)
+            {
+                return HttpNotFound();
+            }
+            NewsDb testnews = db.NewsDb.Find(id);
             NewsDb news = new NewsDb();
             news = testnews;
             List<string> content = new List<string>();

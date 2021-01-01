@@ -143,6 +143,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\CommentDbsController.cs" />
+    <Compile Include="Controllers\LSHnewsController.cs" />
     <Compile Include="Controllers\NewsDbsController.cs" />
     <Compile Include="Controllers\RankDbsController.cs" />
     <Compile Include="Controllers\RightDbsController.cs" />
@@ -214,6 +215,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\Logo\entertainment.png" />
+    <Content Include="Image\Logo\politics.png" />
+    <Content Include="Image\Logo\sports.png" />
+    <Content Include="Image\Logo\technology.png" />
+    <Content Include="Image\Logo\views.png" />
+    <Content Include="Image\LSHImages\new011.1.jpg" />
     <Content Include="Image\News\new001.jpg" />
     <Content Include="Image\News\new002.jpg" />
     <Content Include="Image\News\new003.jpg" />
@@ -239,6 +246,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\css\home.css" />
+    <Content Include="Scripts\css\sports.css" />
     <Content Include="Scripts\home.css" />
     <Content Include="Scripts\home.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -277,6 +286,16 @@
     <Content Include="Views\NewsDbs\Index.cshtml" />
     <Content Include="Views\Home\InitNews.cshtml" />
     <Content Include="Views\XGJNewsContent\Index.cshtml" />
+    <Content Include="Views\LSHnews\Index.cshtml" />
+    <Content Include="Views\LSHnews\Laws.cshtml" />
+    <Content Include="Views\LSHnews\Society.cshtml" />
+    <Content Include="Views\LSHnews\Technology.cshtml" />
+    <Content Include="Views\LSHnews\Life.cshtml" />
+    <Content Include="Views\LSHnews\People.cshtml" />
+    <Content Include="Views\LSHnews\Military.cshtml" />
+    <Content Include="Views\LSHnews\Entertainment.cshtml" />
+    <Content Include="Views\LSHnews\Education.cshtml" />
+    <Content Include="Views\LSHnews\International.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

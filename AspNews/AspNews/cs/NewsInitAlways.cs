@@ -41,15 +41,15 @@ namespace AspNews.cs
 
             var TypeDb = new List<TypeDb>
              {
-                new TypeDb { TypeID =1 , TypeName = "社会" },
-                new TypeDb { TypeID =2 , TypeName = "法治" },
-                new TypeDb { TypeID =3 , TypeName = "科技" },
-                new TypeDb { TypeID =4 , TypeName = "生活" },
-                new TypeDb { TypeID =5 , TypeName = "人物" },
-                new TypeDb { TypeID =6 , TypeName = "军事" },
-                new TypeDb { TypeID =7 , TypeName = "娱乐" },
-                new TypeDb { TypeID =8 , TypeName = "国际" },
-                new TypeDb { TypeID =9 , TypeName = "教育" },
+                new TypeDb { TypeID =1 , TypeName = "社会",TypeEnName = "Society" },
+                new TypeDb { TypeID =2 , TypeName = "法治",TypeEnName = "Laws" },
+                new TypeDb { TypeID =3 , TypeName = "科技",TypeEnName = "Technology" },
+                new TypeDb { TypeID =4 , TypeName = "生活",TypeEnName = "Life" },
+                new TypeDb { TypeID =5 , TypeName = "人物",TypeEnName = "people" },
+                new TypeDb { TypeID =6 , TypeName = "军事",TypeEnName = "Military" },
+                new TypeDb { TypeID =7 , TypeName = "娱乐",TypeEnName = "Entertainment" },
+                new TypeDb { TypeID =8 , TypeName = "国际",TypeEnName = "International" },
+                new TypeDb { TypeID =9 , TypeName = "教育",TypeEnName = "Education" },
              };
             TypeDb.ForEach(p => context.TypeDb.Add(p));
             context.SaveChanges();

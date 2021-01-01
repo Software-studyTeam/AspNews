@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,8 +10,13 @@ using AspNews.cs;
 
 namespace AspNews.Controllers
 {
+
     public class HomeController : Controller
-    {   public ActionResult InitNews()
+
+    {
+        private News db = new News();
+
+        public ActionResult InitNews()
         {
             News db = new News();
             NewsInitAlways context = new NewsInitAlways();
@@ -27,8 +33,9 @@ namespace AspNews.Controllers
 
         public ActionResult Index()
         {
+            List<NewsDb> news = db.NewsDb.OrderBy(b => b.ReleaseTime).Take(10).ToList();
             
-            return View();
+            return View(news);
         }
 
         public ActionResult About()

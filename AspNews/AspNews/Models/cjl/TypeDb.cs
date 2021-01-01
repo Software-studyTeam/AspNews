@@ -18,6 +18,10 @@ namespace AspNews.Models.cjl
         [Display(Name = "类别名称")]
         [StringLength(30)]
         public string TypeName { get; set; }
+
+        [Required]
+        [Display(Name ="类别英文")]
+        public string TypeEnName { get; set; }
         public virtual ICollection<NewsDb> NewsDb { get; set; }
     }
 }

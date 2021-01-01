@@ -46,10 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -143,6 +143,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\CommentDbsController.cs" />
+    <Compile Include="Controllers\LBAccountController.cs" />
     <Compile Include="Controllers\LSHnewsController.cs" />
     <Compile Include="Controllers\NewsDbsController.cs" />
     <Compile Include="Controllers\RankDbsController.cs" />
@@ -153,6 +154,7 @@
     <Compile Include="cs\content1.cs" />
     <Compile Include="cs\NewsInit.cs" />
     <Compile Include="cs\NewsInitAlways.cs" />
+    <Compile Include="Filter\CheckUserAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -318,6 +320,8 @@
     <Content Include="Views\LSHnews\Entertainment.cshtml" />
     <Content Include="Views\LSHnews\Education.cshtml" />
     <Content Include="Views\LSHnews\International.cshtml" />
+    <Content Include="Views\LBAccount\Register.cshtml" />
+    <Content Include="Views\LBAccount\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

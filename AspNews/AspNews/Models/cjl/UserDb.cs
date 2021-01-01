@@ -10,7 +10,7 @@ namespace AspNews.Models.cjl
     [Table("UserDb")]
     public class UserDb
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
         [Display(Name = "用户编号")]
         public int UserID { get; set; }
@@ -26,6 +26,7 @@ namespace AspNews.Models.cjl
 
         [Required]
         [Display(Name = "用户密码")]
+        [DataType(DataType.Password)]
         [StringLength(20)]
         public string UserPassword { get; set; }
 

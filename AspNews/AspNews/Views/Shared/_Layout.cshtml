@@ -24,10 +24,11 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                    <li>@Html.ActionLink("经济类", "Index", "LSHnews",new {area = "",id="Laws" },new { @class = "list-group-item"})</li>
+                    <li>@Html.ActionLink("经济类", "Index", "LSHnews", new { area = "", id = "Laws" }, new { @class = "list-group-item" })</li>
                     <li>@Html.ActionLink("新闻目录", "Index", "NewsDbs")</li>
                     <li>@Ajax.ActionLink("初始化数据", "InitNews", "Home", new { }, ajaxOptions, new { @class = "list-group-item" })</li>
                     <li>@Html.ActionLink("新闻具体详情", "Index", "XGJNewsContent")</li>
+                    <li>@Html.ActionLink("登录", "Login", "LBAccount")</li>
                     <li><a href="#" id="xxxmore" class="list-group-item">更多</a></li>
 
                 </ul>

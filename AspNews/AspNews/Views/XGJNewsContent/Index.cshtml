@@ -31,8 +31,20 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                    
-                    <li style="padding-left:200px;"><a href="#" id="xxxxmore">更多</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" id="xxxxmore">更多</a></li>
+                    @if (Session["LoginUser"] == null)
+                    {
+                        <li>@Html.ActionLink("登录", "Login", "LBAccount")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("注销", "OutLogin", "LBAccount")</li>
+                        <li><a>欢迎 @Session["LoginUser"]</a></li>
+
+                    }
                 </ul>
             </div>
         </div>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AspNews.Filter;
 using AspNews.Models.cjl;
 
 namespace AspNews.Controllers
@@ -23,7 +24,7 @@ namespace AspNews.Controllers
                 if (u.UserPassword == UserPassword)
                 {
                     Session["LoginUser"] = u.UserName;
-                    Session["LoginUser"] = u.RightID;
+                    //Session["LoginUser"] = u.RightID;
                     return Redirect("/");
                 }
                 else
@@ -67,5 +68,10 @@ namespace AspNews.Controllers
             return View("Login");
 
         }
+        public ActionResult OutLogin()
+        {
+            Session["LoginUser"] = null;
+            return View("Login");
+        }
     }
-}
+ }

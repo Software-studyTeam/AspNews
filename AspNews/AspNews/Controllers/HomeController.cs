@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using AspNews.Models.cjl;
 using AspNews.cs;
+using AspNews.Filter;
 
 namespace AspNews.Controllers
 {
@@ -16,6 +17,7 @@ namespace AspNews.Controllers
     {
         private News db = new News();
 
+        [CheckUser]
         public ActionResult InitNews()
         {
             News db = new News();

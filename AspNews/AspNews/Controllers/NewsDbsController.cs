@@ -6,10 +6,12 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using AspNews.Filter;
 using AspNews.Models.cjl;
 
 namespace AspNews.Controllers.NewsControllers
 {
+    [CheckUser]
     public class NewsDbsController : Controller
     {
         private News db = new News();

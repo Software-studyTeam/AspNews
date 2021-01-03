@@ -589,3 +589,5 @@ C:\Users\86136\Desktop\新建文件夹\AspNews\AspNews\AspNews\obj\Debug\AspNews
 C:\Users\86136\Desktop\新建文件夹\AspNews\AspNews\AspNews\obj\Debug\AspNews.csproj.CopyComplete
 C:\Users\86136\Desktop\新建文件夹\AspNews\AspNews\AspNews\obj\Debug\AspNews.dll
 C:\Users\86136\Desktop\新建文件夹\AspNews\AspNews\AspNews\obj\Debug\AspNews.pdb
+E:\软件课程\EX2\AspNews\AspNews\AspNews\bin\zh-Hans\EntityFramework.resources.dll
+E:\软件课程\EX2\AspNews\AspNews\AspNews\bin\zh-Hans\EntityFramework.SqlServer.resources.dll

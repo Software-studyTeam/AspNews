@@ -11,12 +11,15 @@ namespace AspNews.Controllers
     {
         private News db = new News();
         // GET: LSHnews
-        public ActionResult Index(string Id)
+        public ActionResult Index(string id)
         {
-            List<NewsDb> news = db.NewsDb.Where(b => b.TypeID == 2).ToList();
+            int idnum = int.Parse(id);
+            List<NewsDb> news = db.NewsDb.Where(b => b.TypeID == idnum).ToList();
 
+            ViewBag.thisEntitle = db.TypeDb.Find(idnum).TypeEnName;
+            ViewBag.thistitle = db.TypeDb.Find(idnum).TypeName;
             
-            return View(Id,news);
+            return View(news);
         }
     }
 }

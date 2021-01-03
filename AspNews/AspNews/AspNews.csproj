@@ -217,10 +217,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Image\Logo\entertainment.png" />
-    <Content Include="Image\Logo\politics.png" />
+    <Content Include="Image\Logo\Education.png" />
+    <Content Include="Image\Logo\Entertainment.png" />
+    <Content Include="Image\Logo\International.png" />
+    <Content Include="Image\Logo\Laws.png" />
+    <Content Include="Image\Logo\Life.png" />
+    <Content Include="Image\Logo\Military.png" />
+    <Content Include="Image\Logo\People.png" />
+    <Content Include="Image\Logo\Society.png" />
     <Content Include="Image\Logo\sports.png" />
-    <Content Include="Image\Logo\technology.png" />
+    <Content Include="Image\Logo\Technology.png" />
     <Content Include="Image\Logo\views.png" />
     <Content Include="Image\LSHImages\new011.1.jpg" />
     <Content Include="Image\News\new001.jpg" />
@@ -271,6 +277,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\css\home.css" />
+    <Content Include="Scripts\css\mycss.css" />
     <Content Include="Scripts\css\sports.css" />
     <Content Include="Scripts\home.css" />
     <Content Include="Scripts\home.js" />
@@ -311,15 +318,6 @@
     <Content Include="Views\Home\InitNews.cshtml" />
     <Content Include="Views\XGJNewsContent\Index.cshtml" />
     <Content Include="Views\LSHnews\Index.cshtml" />
-    <Content Include="Views\LSHnews\Laws.cshtml" />
-    <Content Include="Views\LSHnews\Society.cshtml" />
-    <Content Include="Views\LSHnews\Technology.cshtml" />
-    <Content Include="Views\LSHnews\Life.cshtml" />
-    <Content Include="Views\LSHnews\People.cshtml" />
-    <Content Include="Views\LSHnews\Military.cshtml" />
-    <Content Include="Views\LSHnews\Entertainment.cshtml" />
-    <Content Include="Views\LSHnews\Education.cshtml" />
-    <Content Include="Views\LSHnews\International.cshtml" />
     <Content Include="Views\LBAccount\Register.cshtml" />
     <Content Include="Views\LBAccount\Login.cshtml" />
   </ItemGroup>

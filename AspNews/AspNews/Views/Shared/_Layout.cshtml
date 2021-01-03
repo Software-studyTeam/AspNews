@@ -6,6 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Scripts/css/mycss.css" rel="stylesheet" />
     <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -24,22 +25,94 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                    <li>@Html.ActionLink("经济类", "Index", "LSHnews", new { area = "", id = "Laws" }, new { @class = "list-group-item" })</li>
                     <li>@Html.ActionLink("新闻目录", "Index", "NewsDbs")</li>
                     <li>@Ajax.ActionLink("初始化数据", "InitNews", "Home", new { }, ajaxOptions, new { @class = "list-group-item" })</li>
                     <li>@Html.ActionLink("新闻具体详情", "Index", "XGJNewsContent")</li>
                     <li>@Html.ActionLink("登录", "Login", "LBAccount")</li>
-                    <li><a href="#" id="xxxmore" class="list-group-item">更多</a></li>
+                    <li><a href="#" id="xxxmore" >更多</a></li>
 
                 </ul>
             </div>
         </div>
-    </div>
-    
-    <div style="padding:0;" class=" container-fluid body-content">
-        @RenderBody()
-        <hr />
 
+
+    </div>
+    <div class="mybox" style="        display: none;
+        border-color: #f5f5f5;
+        border-style: solid;
+        position: fixed;
+        width: 240px;
+        height: 260px;
+        background-color: #ffffff;
+        z-index: 998;">
+
+        <table class="mytable">
+            <tr>
+                <td style="padding-left:50px;padding-right:40px;padding-bottom:30px; padding-top:30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+
+                    @Html.ActionLink("社会", "Index", "LSHnews", new { area = "", id = "1" }, new {})
+                    
+                </td>
+                <td style="padding-right:40px;padding-bottom:30px;padding-top:30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+
+                    @Html.ActionLink("法治", "Index", "LSHnews", new { area = "", id = "2" }, new { })
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 50px; padding-right: 40px; padding-bottom: 30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+                    @Html.ActionLink("军事", "Index", "LSHnews", new { area = "", id = "6" }, new { })
+                    
+                </td>
+                <td style="padding-right:40px;padding-bottom:30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+                    @Html.ActionLink("娱乐", "Index", "LSHnews", new { area = "", id = "7" }, new { })
+                    
+                </td>
+            </tr>
+            <tr>
+
+                <td style="padding-left: 50px; padding-right: 40px; padding-bottom: 30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+                    @Html.ActionLink("科技", "Index", "LSHnews", new { area = "", id = "3" }, new { })
+                    
+                </td>
+                <td style="padding-right:40px;padding-bottom:30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+                    @Html.ActionLink("生活", "Index", "LSHnews", new { area = "", id = "4" }, new { })
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 50px; padding-right: 40px; padding-bottom: 30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+                    @Html.ActionLink("人物", "Index", "LSHnews", new { area = "", id = "5" }, new { })
+                    
+                </td>
+                <td style="padding-right:40px;padding-bottom:30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+                    @Html.ActionLink("国际", "Index", "LSHnews", new { area = "", id = "8" }, new { })
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 50px; padding-right: 40px; padding-bottom: 30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+                    @Html.ActionLink("教育", "Index", "LSHnews", new { area = "", id = "9" }, new { })
+                    
+                </td>
+
+            </tr>
+        </table>
+
+
+    </div>
+    <div style="        padding: 0;
+        background-color: #F5F5F5;
+" class=" container-fluid body-content">
+        @RenderBody()
 
     </div>
     <hr />
@@ -50,5 +123,25 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
+
+    <script>
+        $(function () {
+            $("#xxxmore").click(function () {
+                var offset = $("#xxxmore").offset();
+                m = (offset.left - 80).toString() + "px";
+                $(".mybox").css("margin-left", m);
+                $(".mybox").slideToggle("slow");
+            })
+
+            $(window).resize(function () {
+                var offset = $("#xxxmore").offset();
+                m = (offset.left - 80).toString() + "px";
+                $(".mybox").css("margin-left", m);
+            })
+        })
+
+        
+    </script>
 </body>
+
 </html>

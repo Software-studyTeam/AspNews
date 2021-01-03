@@ -46,13 +46,13 @@ $(function() {
             })
 
             //左按钮
-            $(".banner .btn_l").click(function() {
+            $(".banner .btn_r").click(function() {
                 moveL();
             })
 
 
             //右按钮
-            $(".banner .btn_r").click(function() {
+            $(".banner .btn_l").click(function() {
                 moveR();
             })
 

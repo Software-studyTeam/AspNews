@@ -33,8 +33,8 @@ namespace AspNews.Controllers
 
         public ActionResult Index()
         {
-            List<NewsDb> news = db.NewsDb.OrderBy(b => b.ReleaseTime).Take(10).ToList();
-            
+            List<NewsDb> news = db.NewsDb.OrderByDescending(b => b.ReleaseTime).Take(30).ToList();
+            ViewBag.NewsMains = db.NewsDb.OrderByDescending(b=>b.RankID).Take(10).ToList();
             return View(news);
         }
 

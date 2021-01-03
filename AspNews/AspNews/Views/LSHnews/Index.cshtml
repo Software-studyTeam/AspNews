@@ -1,7 +1,85 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = ViewBag.thisEntitle;
+    ViewBag.png = ViewBag.thisEntitle + ".png";
 }
 
-<h2>Index</h2>
 
+<script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+<div class="thisbody" style="        background: #336699;
+        background-repeat: repeat;
+        height: auto
+    ">
+    <link href="~/Scripts/css/sports.css" rel="stylesheet" type="text/css" />
+    <link href="~/Scripts/css/home.css" rel="stylesheet" type="text/css" />
+    <div class="channel" style="        background: #336699;">
+        <div class="logo"><img src="~/Image/Logo/@ViewBag.png" style="border-color: #000000"></div>
+        <div class="channelName" style="color: #000000">@ViewBag.thistitle·频道</div>
+        <h2>滚动更新全球各地新闻资讯，在碎片化信息中发现世界趋势。</h2>
+    </div>
+
+    <hr style="        background-color: #99CCCC
+">
+    <div style="    width: 100%;
+        background-color: #FFFFFF
+    ">
+        <div class="mainContent" style="        background-color: #FFFFFF;" id="mainContent">
+            <div style="font-size:40px;font-weight:200;"><span>新闻速递</span></div>
+            <div class="con">
+                <ul class="newsList">
+                    @foreach (var item in Model)
+                    {
+                        <li style="        background-color: #FFFFFF
+    " class="xxxmylist">
+                            <div class="image">
+                                <a href="/XGJNewsContent/Index/@item.NewsId">
+
+                                    <img src="~/@item.ImageURL" />
+                                </a>
+                            </div>
+                            <div class="text-con">
+
+                                <h3 class="title"><a target="_blank" href="/XGJNewsContent/Index/@item.NewsId">@item.NewsTitle</a></h3>
+                                <p class="brief">
+                                    <a href="/XGJNewsContent/Index/@item.NewsId" target="_blank">
+                                        @item.NewsDescribed
+                                    </a>
+                                </p>
+                                <div class="bottom1">
+                                    <span class="date">@item.ReleaseTime</span>
+                                    <span class="keywords">@item.NewsKeywords.Replace(',', ' ')</span>
+                                </div>
+                            </div>
+                        </li>
+
+                    }
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <a href="#" id="back-to-top" title="回到顶部"><img src="~/Image/XGJImages/rockets.png"></a>
+    <script src="~/Scripts/home.js">
+    </script>
+    <script>
+
+        $(".xxxmylist").mouseenter(function () {
+            $(this).css("background-color", "#CCCCCC");
+        });
+
+
+
+        $(".xxxmylist").mouseleave(function () {
+            $(this).css("background-color", "#FFFFFF");
+        });
+
+
+    </script>
+</div>
+
+<div class="thisbody" style="        background: #FFFFFF;
+        background-repeat: repeat;
+        height: 100px
+    "></div>

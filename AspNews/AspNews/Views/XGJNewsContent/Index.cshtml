@@ -2,18 +2,22 @@
 @{ var ajaxOptions = (AjaxOptions)TempData["AjaxOptions"];
 }
 @{
+    Layout = null;
     ViewBag.Title = "Index";
 }
 <title>新闻详情</title>
 <link href="~/Scripts/home.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="~/Scripts/news.css">
-
+<link href="~/Scripts/css/mycss.css" rel="stylesheet" />
 <script src="~/Scripts/jquery-3.4.1.min.js" type="text/javascript"></script>
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrap")
 @Styles.Render("~/Content/css")
 @Scripts.Render("~/bundles/modernizr")
+
+
 <body style=" background: #f5f5f5; background-repeat: repeat; ">
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -27,22 +31,84 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                    <li>@Html.ActionLink("关于", "About", "Home")</li>
-                    <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
-                    <li> @Html.ActionLink("新闻目录", "Index", "NewsDbs")</li>
-                    <li>@Ajax.ActionLink("初始化数据", "InitNews", "Home", new { }, ajaxOptions, new { @class = "list-group-item" })</li>
-                    <li>@Html.ActionLink("新闻具体详情", "Index", "XGJNewsContent")</li>
+                    
+                    <li style="padding-left:200px;"><a href="#" id="xxxxmore">更多</a></li>
                 </ul>
             </div>
         </div>
+    </div>
+    <div class="mybox" style="display:none;border-color:#f5f5f5;border-style:solid;position: fixed; width: 240px; height: 260px; background-color: #ffffff; z-index: 998;">
+
+        <table class="mytable">
+            <tr>
+                <td style="padding-left:50px;padding-right:40px;padding-bottom:30px; padding-top:30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+
+                    @Html.ActionLink("社会", "Index", "LSHnews", new { area = "", id = "1" }, new { })
+
+                </td>
+                <td style="padding-right:40px;padding-bottom:30px;padding-top:30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+
+                    @Html.ActionLink("法治", "Index", "LSHnews", new { area = "", id = "2" }, new { })
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 50px; padding-right: 40px; padding-bottom: 30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+                    @Html.ActionLink("军事", "Index", "LSHnews", new { area = "", id = "6" }, new { })
+
+                </td>
+                <td style="padding-right:40px;padding-bottom:30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+                    @Html.ActionLink("娱乐", "Index", "LSHnews", new { area = "", id = "7" }, new { })
+
+                </td>
+            </tr>
+            <tr>
+
+                <td style="padding-left: 50px; padding-right: 40px; padding-bottom: 30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+                    @Html.ActionLink("科技", "Index", "LSHnews", new { area = "", id = "3" }, new { })
+
+                </td>
+                <td style="padding-right:40px;padding-bottom:30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+                    @Html.ActionLink("生活", "Index", "LSHnews", new { area = "", id = "4" }, new { })
+
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 50px; padding-right: 40px; padding-bottom: 30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+                    @Html.ActionLink("人物", "Index", "LSHnews", new { area = "", id = "5" }, new { })
+
+                </td>
+                <td style="padding-right:40px;padding-bottom:30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+                    @Html.ActionLink("国际", "Index", "LSHnews", new { area = "", id = "8" }, new { })
+
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 50px; padding-right: 40px; padding-bottom: 30px;">
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+                    @Html.ActionLink("教育", "Index", "LSHnews", new { area = "", id = "9" }, new { })
+
+                </td>
+
+            </tr>
+        </table>
+
+
     </div>
     <div class="container-fluid body-content">
         <div class="newsContent" style=" margin-top: 0px;width:80%">
             <div class="main">
                 <div class="link" style="text-align: left;padding-left: 28px;margin-bottom: 40px">
                     <i style="vertical-align: middle; display: inline-block; width: 30px; height:20px; background: #e14040; margin-right: 30px;"></i>
-                    <a style="color: #666666; font-size: 20px; height: 20px; line-height: 14px; display: inline-block;" href="../home.html">首页</a> >
-                    <a style="color: #666666; font-size: 20px; height: 20px; line-height: 14px; display: inline-block; " href="../entertainment.html">@Model.TypeDb.TypeName</a>
+                    <a style="color: #666666; font-size: 20px; height: 20px; line-height: 14px; display: inline-block;" href="/Home/Index">首页</a> >
+                    <a style="color: #666666; font-size: 20px; height: 20px; line-height: 14px; display: inline-block; " href="/LSHnews/Index/@Model.TypeDb.TypeID">@Model.TypeDb.TypeName</a>
                 </div>
                 <h1 style="font-family: 微软雅黑;font-size: 30px;font-weight: normal;color: #333333">@Model.NewsTitle</h1>
 
@@ -193,10 +259,27 @@
         </a>
     </div>
 
-
-
     <script src="~/Scripts/home.js" type="text/javascript"></script>
-    <script type="text/javascript">
+
+    <script>
+        $(function () {
+            $("#xxxxmore").click(function () {
+                var offset = $("#xxxxmore").offset();
+                m = (offset.left - 80).toString() + "px";
+                $(".mybox").css("margin-left", m);
+                $(".mybox").slideToggle("slow");
+            })
+
+            $(window).resize(function () {
+                var offset = $("#xxxxmore").offset();
+                m = (offset.left - 80).toString() + "px";
+                $(".mybox").css("margin-left", m);
+            })
+        })
+
+
+    </script>
+    <script>
         $(function () {
             var titles = $(".title li");
             var mods = $(".mod");
@@ -230,10 +313,14 @@
             }, function () {
                 t = setInterval(autoPlay, 3000)
             });
-        })
+        });
+
+
     </script>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+
 
 
 </body>

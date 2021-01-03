@@ -4,7 +4,7 @@
 }
 <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
 
-<div class="thisbody" style="background: #f5f5f5; background-repeat: repeat; ">
+<div class="thisbody" style="background: #f5f5f5; background-repeat: repeat; height:auto">
 
     <link href="~/Scripts/css/home.css" rel="stylesheet" type="text/css" />
     <div class="allcontent">
@@ -12,27 +12,18 @@
             <!--轮播图-->
             <div class="banner">
                 <ul class="img">
-                    <li>
-                        <a href="detailed news/news11.html"><img src="~/Image/News/new001.jpg"><span class="newsTitle" style="left: 30px">柯洁发布会哽咽:很抱歉我输了 希望自己能做得更好</span></a>
-                    </li>
-                    <li>
-                        <a href="detailed news/news12.html"><img src="~/Image/News/new002.jpg"><span class="newsTitle" style="left: 630px">勇士约战骑士：又见面了！</span></a>
-                    </li>
-                    <li>
-                        <a href="detailed news/news13.html"><img src="~/Image/News/new003.jpg"><span class="newsTitle" style="left: 1230px">西甲-皇马2-0夺取队史第33冠 C罗本泽马破门</span></a>
-                    </li>
-                    <li>
-                        <a href="detailed news/news14.html"><img src="~/Image/News/new004.jpg"><span class="newsTitle" style="left: 1830px">为什么众多科幻片都偏爱“最后的幸存者”</span></a>
-                    </li>
-                    <li>
-                        <a href="detailed news/news15.html"><img src="~/Image/News/new005.jpg"><span class="newsTitle" style="left: 2430px">为了找到好用的扫描应用，我试了这几款 App</span></a>
-                    </li>
-                    <li>
-                        <a href="detailed news/news16.html"><img src="~/Image/News/new006.jpg" alt="普京：俄美关系处于冷战以来最低点，俄仍愿发展合作伙伴关系"><span class="newsTitle" style="left: 3030px">普京：俄美关系处于冷战以来最低点，俄仍愿发展合作伙伴关系</span></a>
-                    </li>
-                    <li>
-                        <a href="detailed news/news17.html"><img src="~/Image/News/new007.jpg"><span class="newsTitle" style="left: 3630px">张译：对于《鸡毛飞上天》，我一开始是推掉的</span></a>
-                    </li>
+                    @for(var i = 0;i < 7;i++)
+                    {
+                        var length = 30+600*i;
+                        var strlength = length.ToString() + "px";
+                        <li>
+                            <a href="/XGJNewsContent/Index/@ViewBag.NewsMains[i].NewsId">
+                            <img src="~/@ViewBag.NewsMains[i].ImageURL"/>
+                            <span class="newsTitle" style="left: @strlength">@ViewBag.NewsMains[i].NewsTitle</span>
+                            </a>
+                        </li>
+                    }
+
                 </ul>
                 <ul class="num">
                 </ul>
@@ -40,28 +31,15 @@
                 <div class="btn btn_r">&gt;</div>
             </div>
             <div class="news">
-                <a class="firstA" href="detailed news/news1.html">习近平数赞屈原，民族精神为中国梦“塑心”“聚能”</a>
+
+                <a class="firstA" href="/XGJNewsContent/Index/@ViewBag.NewsMains[0].NewsId" />@ViewBag.NewsMains[0].NewsTitle</a>
                 <br>
-                <ul>
-                    <li>
-                        <a href="detailed news/news14.html">为什么众多科幻片都偏爱“最后的幸存者”</a>|&nbsp&nbsp<a href="detailed news/news3.html">加勒比海盗，系列不死，只是烂掉</a>
-                        <br>
-                    </li>
-                </ul>
-                <a href="detailed news/news4.html">夺冠≠进欧冠!欧洲各联赛冠军出炉 你认识几个?</a>
-                <br>
-                <a href="detailed news/news5.html">娱乐：《新歌声》周杰伦表白陈奕迅：我们相爱未相杀</a>
-                <br>
-                <a href="detailed news/news6.html">明家联合起诉4家乐视系公司 拖欠超6000万广告款</a>
-                <br>
-                <a href="detailed news/news7.html">快讯丨日本众院全体会议表决通过天皇退位特例法案</a>
-                <br>
-                <a href="detailed news/news8.html">观点：“赵云拒嫂”：赵云为何不娶有“倾城之色”的美女为妻</a>
-                <ul>
-                    <li>
-                        <a href="detailed news/news9.html">共享单车，路在何方?&nbsp</a>|&nbsp&nbsp<a href="detailed news/news10.html">神奇女侠穿超短裙也能拯救世界</a>
-                    </li>
-                </ul>
+                @for (int i = 1; i < 8; i++)
+                {
+                    <a href="/XGJNewsContent/Index/@ViewBag.NewsMains[i].NewsId">@ViewBag.NewsMains[i].NewsTitle</a>
+                    <br>
+                }
+
             </div>
         </div>
     </div>
@@ -97,7 +75,7 @@
                     </li>
 
                 }
-    
+
             </ul>
 
         </div>
@@ -121,3 +99,10 @@
 
     </script>
 </div>
+
+
+
+<div class="thisbody" style="        background: #f5f5f5;
+        background-repeat: repeat;
+        height: 100px
+"></div>

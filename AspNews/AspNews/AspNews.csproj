@@ -271,6 +271,9 @@
     <Content Include="Image\News\new040.jpg" />
     <Content Include="Image\News\new041.jpg" />
     <Content Include="Image\News\new042.jpg" />
+    <Content Include="Image\News\new043.jpg" />
+    <Content Include="Image\News\new044.jpg" />
+    <Content Include="Image\News\new045.jpg" />
     <Content Include="Image\XGJImages\bg.jpg" />
     <Content Include="Image\XGJImages\rockets.png" />
     <Content Include="Scripts\bootstrap.js" />

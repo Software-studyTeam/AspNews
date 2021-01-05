@@ -182,6 +182,15 @@ namespace AspNews.cs
                 new NewsDb { NewsId = "42" , TypeID =8 , RankID =4 , NewsDescribed = "美国威斯康星州一家医疗机构的一名工作人员故意毁坏了500多剂莫德纳新冠疫苗，其作案动机不明，现已被解雇。"  , NewsWriter = "钱景童"  , NewsTitle = "美医疗机构员工故意毁坏500剂新冠疫苗 动机不明"  , NewsSource = "海外网"  , NewsKeywords =  "新冠,医疗机构,故意毁坏"   , ReleaseTime = DateTime.Parse("2020-12-31 17:23Z")   ,
                              NewsContent = c.news42   ,
                              ImageURL = "Image/News/new042.jpg"  , ReadingNum = 545696  },
+                new NewsDb { NewsId = "43" , TypeID =1 , RankID =1 , NewsDescribed = "承诺如山，初心如磐。尽管这一年世纪疫情与百年变局交织，给本就艰苦卓绝的脱贫攻坚工作增加了难度，但如期打赢脱贫攻坚战，容不得半点懈怠和拖延。"  ,  NewsWriter = "康彦龙"  , NewsTitle = "回眸2020｜郑重承诺"  ,NewsSource = "央视网"  , NewsKeywords =  "人民领袖,习近平"   , ReleaseTime = DateTime.Parse("2021-01-03 21:20Z")   ,
+                             NewsContent = c.news43   ,
+                             ImageURL = "Image/News/new043.jpg"  , ReadingNum = 65456967  },
+                new NewsDb { NewsId = "44" , TypeID =1 , RankID =1 , NewsDescribed = "随着国产新冠病毒疫苗附条件上市，上海、北京、山东等多个省份加快启动大规模接种。怎么预约、谁能尽快打？哪些禁忌症不能接种？有不良反应怎么办？针对公众关心的问题，有关部门作出权威回应。"  , NewsWriter = "钱景童"  , NewsTitle = "疫苗接种八大关切，权威回应来了！"  , NewsSource = "新华网"  , NewsKeywords =  "疫苗接种"   , ReleaseTime = DateTime.Parse("2021-01-05 04:08Z")   ,
+                             NewsContent = c.news44   ,
+                             ImageURL = "Image/News/new044.jpg"  , ReadingNum = 7954515  },
+                new NewsDb { NewsId = "45" , TypeID =8 , RankID =1 , NewsDescribed = "据外交部官网消息，1月4日，外交部发言人华春莹主持例行记者会。针对纽交所摘牌三家中国电信企业，华春莹指出，中方坚决反对美国政府将经贸问题政治化，滥用国家力量、泛化国家安全概念，无端打压中国企业"  , NewsWriter = "钱景童"  , NewsTitle = "纽交所摘牌三家中国电信企业，外交部：将经贸问题政治化"  , NewsSource = "中国新闻网"  , NewsKeywords =  "外交部,华春莹,电信企业"   , ReleaseTime = DateTime.Parse("2021-01-05 05:02Z")   ,
+                             NewsContent = c.news45   ,
+                             ImageURL = "Image/News/new045.jpg"  , ReadingNum = 78541219  },
 
              };
             NewsDb.ForEach(p => context.NewsDb.Add(p));

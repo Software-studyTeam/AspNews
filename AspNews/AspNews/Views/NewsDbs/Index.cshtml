@@ -1,13 +1,23 @@
 ﻿@model IEnumerable<AspNews.Models.cjl.NewsDb>
 
+
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
+<style>
+    table{
+        table-layout:fixed;
+    }
+    .td {
+        width: 8px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+</style>
+<h2>新闻列表</h2>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("添加新闻", "Create")
 </p>
 <table class="table">
     <tr>
@@ -48,48 +58,49 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <img src="~/@item.ImageURL"/>
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TypeID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RankID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NewsDescribed)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NewsWriter)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NewsTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NewsSource)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NewsKeywords)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReleaseTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NewsContent)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImageURL)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReadingNum)
-        </td>
-        <td>
-            @Html.ActionLink("编辑", "Edit", new { id=item.NewsId }) |
-            @Html.ActionLink("详情", "Details", new { id=item.NewsId }) |
-            @Html.ActionLink("删除", "Delete", new { id=item.NewsId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        //<img src="~/@item.ImageURL"/>
+        <tr>
+            <td class="td">
+                @Html.DisplayFor(modelItem => item.TypeID)
+            </td>
+            <td class="td">
+                @Html.DisplayFor(modelItem => item.RankID)
+            </td>
+            <td class="td">
+                @Html.DisplayFor(modelItem => item.NewsDescribed)
+            </td>
+            <td class="td">
+                @Html.DisplayFor(modelItem => item.NewsWriter)
+            </td>
+            <td class="td">
+                @Html.DisplayFor(modelItem => item.NewsTitle)
+            </td>
+            <td class="td">
+                @Html.DisplayFor(modelItem => item.NewsSource)
+            </td>
+            <td class="td">
+                @Html.DisplayFor(modelItem => item.NewsKeywords)
+            </td>
+            <td class="td">
+                @Html.DisplayFor(modelItem => item.ReleaseTime)
+            </td>
+            <td class="td">
+                @Html.DisplayFor(modelItem => item.NewsContent)
+            </td>
+            <td class="td">
+                @Html.DisplayFor(modelItem => item.ImageURL)
+            </td>
+            <td class="td">
+                @Html.DisplayFor(modelItem => item.ReadingNum)
+            </td>
+            <td>
+                @Html.ActionLink("编辑", "Edit", new { id = item.NewsId }) |
+                @Html.ActionLink("详情", "Details", new { id = item.NewsId }) |
+                @Html.ActionLink("删除", "Delete", new { id = item.NewsId })
+            </td>
+        </tr>
+    }
 
 </table>

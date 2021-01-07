@@ -11,7 +11,7 @@ using AspNews.Models.cjl;
 
 namespace AspNews.Controllers.NewsControllers
 {
-    [CheckUser]
+    //[CheckUser]
     public class NewsDbsController : Controller
     {
         private News db = new News();

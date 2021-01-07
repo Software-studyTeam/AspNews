@@ -17,7 +17,7 @@ namespace AspNews.Controllers
     {
         private News db = new News();
 
-        [CheckUser]
+        //[CheckUser]
         public ActionResult InitNews()
         {
             News db = new News();

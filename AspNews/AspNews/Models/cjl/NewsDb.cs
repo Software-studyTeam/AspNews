@@ -61,6 +61,9 @@ namespace AspNews.Models.cjl
         [Display(Name = "图片")]
         [StringLength(100)]
         public string ImageURL { get; set; }
+        [NotMapped]
+        public string AvatarUploader { get; set; }
+
 
         [Required]
         [Display(Name = "阅读量")]

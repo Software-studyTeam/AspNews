@@ -297,6 +297,18 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\lbcss\animate.css" />
+    <Content Include="Scripts\lbcss\bootstrap-rtl.css" />
+    <Content Include="Scripts\lbcss\bootstrap.min.css" />
+    <Content Include="Scripts\lbcss\bootstrap.min.js" />
+    <Content Include="Scripts\lbcss\content.js" />
+    <Content Include="Scripts\lbcss\font-awesome.min.css" />
+    <Content Include="Scripts\lbcss\hAdmin.js" />
+    <Content Include="Scripts\lbcss\jquery-ui-1.10.4.min.js" />
+    <Content Include="Scripts\lbcss\jquery-ui.custom.min.js" />
+    <Content Include="Scripts\lbcss\jquery.min.js" />
+    <Content Include="Scripts\lbcss\login.css" />
+    <Content Include="Scripts\lbcss\style.css" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\news.css" />
     <Content Include="Scripts\style.css" />
@@ -324,6 +336,7 @@
     <Content Include="Views\LSHnews\Index.cshtml" />
     <Content Include="Views\LBAccount\Register.cshtml" />
     <Content Include="Views\LBAccount\Login.cshtml" />
+    <Content Include="Scripts\lbcss\jquery.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

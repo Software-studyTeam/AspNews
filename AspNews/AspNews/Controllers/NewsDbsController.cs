@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -48,15 +49,34 @@ namespace AspNews.Controllers.NewsControllers
         // 更多详细信息，请参阅 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NewsId,TypeID,RankID,NewsDescribed,NewsWriter,NewsTitle,NewsSource,NewsKeywords,ReleaseTime,NewsContent,ImageURL,ReadingNum")] NewsDb newsDb)
+        public ActionResult Edit([Bind(Include = "NewsId,TypeID,RankID,NewsDescribed,NewsWriter,NewsTitle,NewsSource,NewsKeywords,ReleaseTime,NewsContent,ImageURL,ReadingNum")] NewsDb newsDb, HttpPostedFileBase AvatarUploader = null, HttpPostedFileBase ImageURL = null)
         {
             if (ModelState.IsValid)
             {
-                db.NewsDb.Add(newsDb);
+                var imgFileName = Path.Combine(Request.MapPath("~/Image/News"), Path.GetFileName(AvatarUploader.FileName));
+                if (AvatarUploader != null)
+                {
+                    //确保文件要保存的目录事先存在, Alt+回车引用System.IO(.Path)
+                    //  Combine将两个串组合成一个串
+                    imgFileName = Path.Combine(Request.MapPath("~/Image/News"), Path.GetFileName(AvatarUploader.FileName));
+                    try
+                    {
+                        AvatarUploader.SaveAs(imgFileName); //保存到项目中根目录下的~/Image/News文件夹
+                        newsDb.ImageURL = Path.GetFileName(AvatarUploader.FileName);
+                    }
+                    catch
+                    {
+                        return Content("上传图片异常!", "text/plain");
+                    }
+                }
+                if (ImageURL != null)
+                {
+                    newsDb.ImageURL = ImageURL.ContentType;
+                }
+                db.Entry(newsDb).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(newsDb);
         }
 

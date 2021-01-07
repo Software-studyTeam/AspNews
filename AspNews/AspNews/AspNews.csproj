@@ -222,11 +222,14 @@
     <Content Include="Image\Logo\International.png" />
     <Content Include="Image\Logo\Laws.png" />
     <Content Include="Image\Logo\Life.png" />
+    <Content Include="Image\Logo\logonews.png" />
     <Content Include="Image\Logo\Military.png" />
+    <Content Include="Image\Logo\moveLogo.png" />
     <Content Include="Image\Logo\People.png" />
     <Content Include="Image\Logo\Society.png" />
     <Content Include="Image\Logo\sports.png" />
     <Content Include="Image\Logo\Technology.png" />
+    <Content Include="Image\Logo\todaynews.png" />
     <Content Include="Image\Logo\views.png" />
     <Content Include="Image\LSHImages\new011.1.jpg" />
     <Content Include="Image\News\new001.jpg" />
@@ -280,6 +283,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\css\home.css" />
+    <Content Include="Scripts\css\hover.css" />
     <Content Include="Scripts\css\mycss.css" />
     <Content Include="Scripts\css\sports.css" />
     <Content Include="Scripts\home.css" />

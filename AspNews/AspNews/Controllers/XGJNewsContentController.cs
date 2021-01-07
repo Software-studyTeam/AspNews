@@ -18,6 +18,8 @@ namespace AspNews.Controllers
                 return HttpNotFound();
             }
             NewsDb testnews = db.NewsDb.Find(id);
+            testnews.ReadingNum++;
+            db.SaveChanges();
             NewsDb news = new NewsDb();
             news = testnews;
             List<string> content = new List<string>();

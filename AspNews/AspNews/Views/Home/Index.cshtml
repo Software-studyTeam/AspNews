@@ -3,23 +3,85 @@
     ViewBag.Title = "Home Page";
 }
 <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+<link href="~/Scripts/css/hover.css" rel="stylesheet" />
+<div class="thisbody" style="overflow:hidden;height:auto; background: #f5f5f5; background-repeat: repeat;">
+    <div id="imgDiv" style="z-index:999; position:absolute;left:50px;top:60px;">
 
-<div class="thisbody" style="background: #f5f5f5; background-repeat: repeat; height:auto">
+        <div id="a" style="width:20px;height:20px;position:absolute;left:206px;background:salmon;text-align: center;">×</div>
+        <a href="/XGJNewsContent/Index/43">
+            <img src="~/Image/Logo/moveLogo.png" style="width:60%;" border="0" />
+        </a>
+    </div>
 
+    <script>
+
+        var xin = true,
+            yin = true;
+        var step = 1;
+        var delay = 10;
+        var $obj;
+        $(function () {
+            $obj = $("#imgDiv");
+            var time = window.setInterval("move()", delay);
+            $obj.mouseover(function () {
+                clearInterval(time)
+            });
+            $obj.mouseout(function () {
+                time = window.setInterval("move()", delay)
+            });
+        });
+
+        function move() {
+            var left = $obj.offset().left;
+            var top = $obj.offset().top;
+            var L = T = 0; //左边界和顶部边界
+            var R = $(window).width() - $obj.width(); // 右边界
+            var B = $(window).height() - $obj.height(); //下边界
+
+            //难点:怎样判断广告的4个边框有没有超出可视化范围!
+            if (left < L) {
+                xin = true; // 水平向右移动
+            }
+            if (left > R) {
+                xin = false;
+            }
+            if (top < T) {
+                yin = true;
+            }
+            if (top > B) {
+                yin = false;
+            }
+            //根据有没有超出范围来确定广告的移动方向
+            left += step * (xin == true ? 1 : -1);
+            top += step * (yin == true ? 1 : -1);
+            // 给div 元素重新定位
+            $obj.offset({
+                top: top,
+                left: left
+            })
+        }
+        //关闭
+        $(function () {
+            $("#a").click(function () {
+                var b = $("#a").parent();
+                $(b).remove();
+            })
+        })
+    </script>
     <link href="~/Scripts/css/home.css" rel="stylesheet" type="text/css" />
     <div class="allcontent">
         <div class="mycontent">
             <!--轮播图-->
             <div class="banner">
                 <ul class="img">
-                    @for(var i = 0;i < 7; i++)
+                    @for (var i = 0; i < 7; i++)
                     {
-                        var length = 30+600*i;
+                        var length = 30 + 600 * i;
                         var strlength = length.ToString() + "px";
                         <li>
                             <a href="/XGJNewsContent/Index/@ViewBag.NewsMains[i].NewsId">
-                            <img src="~/@ViewBag.NewsMains[i].ImageURL"/>
-                            <span class="newsTitle" style="left: @strlength">@ViewBag.NewsMains[i].NewsTitle</span>
+                                <img src="~/@ViewBag.NewsMains[i].ImageURL" />
+                                <span class="newsTitle" style="left: @strlength">@ViewBag.NewsMains[i].NewsTitle</span>
                             </a>
                         </li>
                     }
@@ -46,9 +108,37 @@
 
     <hr>
 
-    <div class="mainContent" id="mainContent">
+    <div class="mainContent" id="mainContent" style="overflow:hidden;height:auto;">
         <div style="font-size:40px;font-weight:200;"><span>新闻速递</span></div>
-        <div class="con">
+
+        <div style="font-size:20px;font-weight:200;">
+            <a id="listbtn1" href="javascript:void(0);">列表浏览</a><span> | </span>
+            <a id="listbtn2" href="javascript:void(0);">卡片浏览</a>
+        </div>
+        <div id="con2" style="width:100%; display: none;
+        background-color:#ffffff;" class="con2">
+            <div style="text-align:center">
+                @foreach(var item in Model)
+                            {
+                                <div class="tile">
+                                    <div class="text" >
+                                        <a style="color:black;" href="/XGJNewsContent/Index/@item.NewsId">
+                                            <h3>@item.NewsTitle</h3>
+                                            <img src="~/@item.ImageURL">
+                                            <h2 class="animate-text">@item.NewsKeywords.Replace(',', ' ')</h2>
+                                            <p class="animate-text">
+                                                @item.NewsDescribed
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            }
+
+
+
+            </div>
+        </div>
+        <div id="con" class="con" style="display: block">
             <ul class="newsList">
                 @foreach (var item in Model)
                 {
@@ -79,12 +169,23 @@
             </ul>
 
         </div>
+        <div style="width:100%;height:30px"></div>
     </div>
 
     <a href="#" id="back-to-top" title="回到顶部"><img src="~/Image/XGJImages/rockets.png"></a>
     <script src="~/Scripts/home.js">
     </script>
     <script>
+        $("#listbtn1").click(function () {
+            $(".con2").css('display', 'none');
+            $(".con").css('display', 'block');
+
+        });
+        $("#listbtn2").click(function () {
+            $(".con").css('display', 'none');
+            $(".con2").css('display', 'block');
+
+        });
 
         $(".xxxmylist").mouseenter(function () {
             $(this).css("background-color", "#F8F8FF");
@@ -98,11 +199,12 @@
 
 
     </script>
+    <script>
+
+
+
+    </script>
+
 </div>
 
 
-
-<div class="thisbody" style="        background: #f5f5f5;
-        background-repeat: repeat;
-        height: 100px
-"></div>

@@ -21,6 +21,7 @@ namespace AspNews.Controllers
             NewsDb news = new NewsDb();
             news = testnews;
             List<string> content = new List<string>();
+            
             string[] Pcontent = news.NewsContent.Split('\n');
             ViewBag.pcontent = Pcontent;
 

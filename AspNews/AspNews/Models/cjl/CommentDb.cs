@@ -14,7 +14,6 @@ namespace AspNews.Models.cjl
         [Required]
         [Display(Name = "评论编号")]
         public int CommentID { get; set; }
-
         [Required]
         [Display(Name = "新闻编号")]
         [StringLength(10)]

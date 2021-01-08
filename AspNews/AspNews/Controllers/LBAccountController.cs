@@ -16,6 +16,13 @@ namespace AspNews.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View("Login");
+        }
+        
+            [HttpPost]
         public ActionResult Login(string UserName, string UserPassword)
         {
             UserDb u = db.UserDb.SingleOrDefault(t => t.UserName == UserName);
@@ -24,16 +31,18 @@ namespace AspNews.Controllers
                 if (u.UserPassword == UserPassword)
                 {
                     Session["LoginUser"] = u.UserName;
-                    //Session["LoginUser"] = u.RightID;
-                    return Redirect("/");
+                    Session["Roles"] = u.RightID;
+                    return Content("登录成功！<a href='/'>返回首页</a>");
                 }
                 else
                 {
+                    Response.Write("<script>alert('用户或密码错误')</script>");
                     return View("Login");
                 }
             }
             else
             {
+                Response.Write("<script>alert('用户或密码错误')</script>");
                 return View("Login");
             }
         }
@@ -51,12 +60,15 @@ namespace AspNews.Controllers
             UserDb myuser = db.UserDb.FirstOrDefault(u => u.UserName == UserName);
             if (!ConfirmPassword.Equals(password))
             {
-                return HttpNotFound();
+
+                Response.Write(("<script>alert('两次密码输入不一致！')</script>"));
+                return View();
             }
 
             if (myuser != null)
             {
-                return HttpNotFound();
+                Response.Write(("<script>alert('用户已存在！')</script>"));
+                return View();
             }
 
             UserDb newUser = new UserDb();
@@ -65,12 +77,14 @@ namespace AspNews.Controllers
             newUser.RightID = 2;
             db.UserDb.Add(newUser);
             db.SaveChanges();
+
+            Response.Write("<script>alert('注册成功')</script>");
             return View("Login");
 
         }
         public ActionResult OutLogin()
         {
-            Session["LoginUser"] = null;
+            Session.Clear();
             return View("Login");
         }
     }

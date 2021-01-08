@@ -4,37 +4,24 @@
     ViewBag.Title = "Create";
 }
 
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <h2>添加新闻</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "NewsDbs", FormMethod.Post, new { @enctype = "multipart/form-data", }))
 {
     @Html.AntiForgeryToken()
-    
     <div class="form-horizontal">
-        <h4>NewsAdd</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.NewsId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NewsId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NewsId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        @Html.HiddenFor(model => model.NewsId)
+
+
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TypeID, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.NewsTitle, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TypeID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TypeID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.RankID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.RankID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RankID, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.NewsTitle, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NewsTitle, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -46,19 +33,43 @@
             </div>
         </div>
 
+
+
         <div class="form-group">
-            @Html.LabelFor(model => model.NewsWriter, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">新闻图片</label>
+            <img src="" id="img0" style="width:900px;height: 500px;">
+            <label type="button" class="btn btn-success">
+                <input type="file" name="file0" id="file0" style="width: 100px;height: 100px;border: 0;position: absolute;left: 0;top: 0;z-index: 1;padding: 0;opacity: 0;" />
+                <span>选择图片</span>
+            </label>
+        </div>
+        <div class="form-group" style="width:1000px">
+            @Html.LabelFor(model => model.NewsContent, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NewsWriter, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NewsWriter, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.NewsContent, new { htmlAttributes = new { @style = "width:1000px;max-width:1000px;height:500px;" } })
+                @Html.ValidationMessageFor(model => model.NewsContent, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.TypeDb.TypeName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TypeDb.TypeName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TypeDb.TypeName, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.NewsTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.RankDb.RankName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NewsTitle, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NewsTitle, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.RankDb.RankName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RankDb.RankName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.NewsKeywords, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NewsKeywords, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NewsKeywords, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -71,48 +82,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.NewsKeywords, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.NewsWriter, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NewsKeywords, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NewsKeywords, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.NewsWriter, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NewsWriter, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ReleaseTime, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ReleaseTime, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ReleaseTime, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.NewsContent, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NewsContent, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NewsContent, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImageURL, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <a class="btn" href="javascript:;"><input type="file" name="Photo" id="Photo" onchange='$("#upload-file-info").html($(this).val());' class="form-control" /></a>
-                <span class="label label-default" id="upload-file-info"></span>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ReadingNum, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ReadingNum, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ReadingNum, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="添加" class="btn btn-default" />
+                <input type="submit" value="保存" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -121,3 +102,24 @@
 <div>
     @Html.ActionLink("返回", "Index")
 </div>
+<script>
+    $("#file0").change(function () {
+        var objUrl = getObjectURL(this.files[0]);//获取文件信息
+        console.log("objUrl = " + objUrl);
+        if (objUrl) {
+            $("#img0").attr("src", objUrl);
+        }
+    });
+    function getObjectURL(file) {
+        var url = null;
+        if (window.createObjectURL != undefined) {
+            url = window.createObjectURL(file);
+        } else if (window.URL != undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file);
+        } else if (window.webkitURL != undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file);
+        }
+        return url;
+    }
+
+</script>

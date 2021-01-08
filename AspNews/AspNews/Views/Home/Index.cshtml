@@ -4,6 +4,7 @@
 }
 <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
 <link href="~/Scripts/css/hover.css" rel="stylesheet" />
+<link href="~/Scripts/css/mycss.css" rel="stylesheet" />
 <div class="thisbody" style="overflow:hidden;height:auto; background: #f5f5f5; background-repeat: repeat;">
     <div id="imgDiv" style="z-index:999; position:absolute;left:50px;top:60px;">
 
@@ -104,10 +105,42 @@
 
             </div>
         </div>
+        <div style="margin:0 auto;padding:0 0 0 170px">
+            <style>
+                .shella {
+                    display: block;
+                    line-height: 36px;
+                    text-decoration: none;
+                    color: #f00;
+                    font-family: Arial;
+                    font-size: 12px;
+                }
+
+                .shell a:hover {
+                    text-decoration: underline;
+                }
+
+                .shell {
+                    width: 1000px;
+                }
+
+                #div1 {
+                    height: 36px;
+                    overflow: hidden;
+                }
+            </style>
+
+            <div class="shell">
+                <div id="div1">
+                    @for (int i = 0; i < 4; i++)
+                    {
+                        <a style="font-size:20px;color:red;" class="shella" href="/XGJNewsContent/Index/@ViewBag.NewsMove[i].NewsId">@ViewBag.NewsMove[i].NewsTitle</a>
+                    }
+                </div>
+            </div>
+        </div>
     </div>
-
     <hr>
-
     <div class="mainContent" id="mainContent" style="overflow:hidden;height:auto;">
         <div style="font-size:40px;font-weight:200;"><span>新闻速递</span></div>
 
@@ -118,21 +151,21 @@
         <div id="con2" style="width:100%; display: none;
         background-color:#ffffff;" class="con2">
             <div style="text-align:center">
-                @foreach(var item in Model)
-                            {
-                                <div class="tile">
-                                    <div class="text" >
-                                        <a style="color:black;" href="/XGJNewsContent/Index/@item.NewsId">
-                                            <h3>@item.NewsTitle</h3>
-                                            <img src="~/@item.ImageURL">
-                                            <h2 class="animate-text">@item.NewsKeywords.Replace(',', ' ')</h2>
-                                            <p class="animate-text">
-                                                @item.NewsDescribed
-                                            </p>
-                                        </a>
-                                    </div>
-                                </div>
-                            }
+                @foreach (var item in Model)
+                {
+                    <div class="tile">
+                        <div class="text">
+                            <a style="color:black;" href="/XGJNewsContent/Index/@item.NewsId">
+                                <h3>@item.NewsTitle</h3>
+                                <img src="~/@item.ImageURL">
+                                <h2 class="animate-text">@item.NewsKeywords.Replace(',', ' ')</h2>
+                                <p class="animate-text">
+                                    @item.NewsDescribed
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                }
 
 
 
@@ -200,9 +233,9 @@
 
     </script>
     <script>
-
-
-
+        var c, _ = Function;
+        with (o = document.getElementById("div1")) { innerHTML += innerHTML; onmouseover = _("c=1"); onmouseout = _("c=0"); }
+        (F = _("if(#%18||!c)#++,#%=o.scrollHeight>>1;setTimeout(F,#%18?50:500);".replace(/#/g, "o.scrollTop")))();
     </script>
 
 </div>

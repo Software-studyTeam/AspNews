@@ -35,12 +35,16 @@ namespace AspNews.Controllers
 
         public ActionResult Index()
         {
-           News db = new News();
-            NewsInitAlways context = new NewsInitAlways();
-            context.InitializeDatabase(db);
+            if (db.NewsDb.Count() == 0)
+            {
+                News db = new News();
+                NewsInitAlways context = new NewsInitAlways();
+                context.InitializeDatabase(db);
+            }
 
             List<NewsDb> news = db.NewsDb.OrderByDescending(b => b.ReleaseTime).Take(30).ToList();
             ViewBag.NewsMains = db.NewsDb.OrderBy(b=>b.RankID).Take(10).ToList();
+            ViewBag.NewsMove = db.NewsDb.OrderByDescending(b => b.ReadingNum).Take(4).ToList();
             return View(news);
         }
 

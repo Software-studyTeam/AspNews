@@ -17,7 +17,6 @@
 
 
 <body style=" background: #f5f5f5; background-repeat: repeat; ">
-
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -39,7 +38,7 @@
                     <li><a href="#" id="xxxxmore">更多</a></li>
                     @if (Session["LoginUser"] == null)
                     {
-                        <li>@Html.ActionLink("登录", "Login", "LBAccount")</li>
+                        <li>@Html.ActionLink("登录/注册", "Login", "LBAccount")</li>
                     }
                     else
                     {
@@ -117,153 +116,130 @@
 
     </div>
     <div class="container-fluid body-content">
-        <div class="newsContent" style=" margin-top: 0px;width:80%">
-            <div class="main">
-                <div class="link" style="text-align: left;padding-left: 28px;margin-bottom: 40px">
-                    <i style="vertical-align: middle; display: inline-block; width: 30px; height:20px; background: #e14040; margin-right: 30px;"></i>
-                    <a style="color: #666666; font-size: 20px; height: 20px; line-height: 14px; display: inline-block;" href="/Home/Index">首页</a> >
-                    <a style="color: #666666; font-size: 20px; height: 20px; line-height: 14px; display: inline-block; " href="/LSHnews/Index/@Model.TypeDb.TypeID">@Model.TypeDb.TypeName</a>
-                </div>
-                <h1 style="font-family: 微软雅黑;font-size: 30px;font-weight: normal;color: #333333">@Model.NewsTitle</h1>
+        <div id="page">
+            <div class="newsContent" style=" margin-top: 0px;width:80%">
+                <div class="main">
+                    <div class="link" style="text-align: left;padding-left: 28px;margin-bottom: 40px">
+                        <i style="vertical-align: middle; display: inline-block; width: 30px; height:20px; background: #e14040; margin-right: 30px;"></i>
+                        <a style="color: #666666; font-size: 20px; height: 20px; line-height: 14px; display: inline-block;" href="/Home/Index">首页</a> >
+                        <a style="color: #666666; font-size: 20px; height: 20px; line-height: 14px; display: inline-block; " href="/LSHnews/Index/@Model.TypeDb.TypeID">@Model.TypeDb.TypeName</a>
+                    </div>
+                    <h1 style="font-family: 微软雅黑;font-size: 30px;font-weight: normal;color: #333333">@Model.NewsTitle</h1>
 
-                <hr style="margin: 20px 0">
-                <div class="link" style="text-align: left;
+                    <hr style="margin: 20px 0">
+                    <div class="link" style="text-align: left;
         padding-left: 28px;
         margin-bottom: 40px;
         color: #a7a7a7;
         font-size: 14px;
 ">
-                    <span style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;">发布时间:@Model.ReleaseTime | 阅读量:@Model.ReadingNum</span>
+                        <span style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;">发布时间:@Model.ReleaseTime | 阅读量:@Model.ReadingNum</span>
+                        <a class="page-btn" href="javascript:void(0)"> 导出 </a>
+                    </div>
+
+                    <img style="width: 100%;height:auto" src="~/@Model.ImageURL" />
+                    @for (int i = 0; i < ViewBag.pcontent.Length; i++)
+                    {
+                        <p>@ViewBag.pcontent[i]</p>
+                    }
+
                 </div>
 
-                <img style="width: 100%;height:auto" src="~/@Model.ImageURL" />
-                @for (int i = 0; i < ViewBag.pcontent.Length; i++)
-                {
-                    <p>@ViewBag.pcontent[i]</p>
-                }
-
-            </div>
-
-            <div class="link" style="        text-align: left;
+                <div class="link" style="        text-align: left;
         padding-left: 28px;
         margin-bottom: 40px;
         color: #a7a7a7;
         font-size: 14px;
 ">
-                <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
-                <span style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;">作者:@Model.NewsWriter</span><br /><br />
-                <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #ffd800; margin-right: 6px;"></i>
-                <span style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;">关键字:   @Model.NewsKeywords.Replace(',', ' ')</span>
-            </div>
-
-
-            <hr style="margin-bottom: 50px;">
-            <p style="text-align: left;padding-left: 40px;font-size: 1.2em;color: #000000">更多新闻></p>
-            <!-- 选项卡 -->
-            <div id="notice" class="notice">
-                <div id="title" class="title">
-                    <ul>
-                        <li class="select">
-                            <a href="LSHnews/Index/1">社会</a>
-                        </li>
-                        <li>
-                            <a href="/LSHnews/Index/8">国际</a>
-                        </li>
-                        <li>
-                            <a href="/LSHnews/Index/3">科技</a>
-                        </li>
-                        <li>
-                            <a href="/LSHnews/Index/7">娱乐</a>
-                        </li>
-                        <li>
-                            <a href="/LSHnews/Index/9">教育</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="content">
-                    <div class="mod">
-                        <ul>
-                            <li>
-                                <a href="http://news.163.com/17/0605/09/CM5J5RQ4000189FH.html">这件事 习近平和你一样一直努力着</a>
-                            </li>
-                            <li>
-                                <a href="http://news.ifeng.com/a/20170605/51196876_0.shtml">第七国！马尔代夫政府宣布与卡塔尔断交</a>
-                            </li>
-                            <li>
-                                <a href="http://www.sohu.com/a/146186450_120809">教育部：高考4大谣言、6大骗局千万别信</a>
-                            </li>
-                            <li>
-                                <a href="#">郭台铭放话：未来电子商务平台可能会消失！</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="mod" style="display: none;">
-                        <ul>
-                            <li>
-                                <a href="http://www.thepaper.cn/newsDetail_forward_1700866">勇士19分再胜骑士,季后赛14连胜创纪录!</a>
-                            </li>
-                            <li>
-                                <a href="http://sports.qq.com/a/20170604/001499.htm">欧冠-皇马4-1胜尤文第12次捧杯 C罗梅开二度</a>
-                            </li>
-                            <li>
-                                <a href="http://sports.163.com/17/0605/07/CM5A0V6900058782.html">德约连续八年进法网八强会师蒂姆 拉奥长盘落败</a>
-                            </li>
-                            <li>
-                                <a href="http://sports.qq.com/vo/#/cover/82wx0lgzg172bug/i0023v4qzdi">白岩松专访梅西：阿根廷夺世界杯我剃须</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="mod" style="display: none;">
-                        <ul>
-                            <li>
-                                <a href="http://mobile.163.com/17/0605/01/CM4LH40O00118017.html">软硬件更新齐登场 苹果WWDC17新品前瞻</a>
-                            </li>
-                            <li>
-                                <a href="http://tech.163.com/17/0605/09/CM5GSI3E00097U7R.html">顺丰控股：已与菜鸟达成共识 有关事件已妥善解决</a>
-                            </li>
-                            <li>
-                                <a href="http://www.dgtle.com/article-18245-1.html">某文具品牌主理人的EDC</a>
-                            </li>
-                            <li>
-                                <a href="http://www.keke289.com/news/18417.html">618天猫反客为主，京东员工感叹太大力度</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="mod" style="display: none;">
-                        <ul>
-                            <li>
-                                <a href="http://ent.163.com/17/0605/12/CM5SP72J000380D0.html">扎克·施奈德力挺《神奇女侠》： "骄傲！"</a>
-                            </li>
-                            <li>
-                                <a href="http://ent.163.com/17/0605/13/CM60CLC500037VVV.html">罗志祥快男现场遭选手吐槽“太业余”</a>
-                            </li>
-                            <li>
-                                <a href="http://app.sun0769.com/mobilesun/dgygw/zx/yl/201706/t20170604_7412757.htm">王心凌内衣外穿秀性感身材 只是脸太僵！</a>
-                            </li>
-                            <li>
-                                <a href="http://ent.163.com/17/0605/14/CM62E3HH00037VVV.html">林更新：和王思聪不是亲戚 “贫富差距”压力大</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="mod" style="display: none;">
-                        <ul>
-                            <li>
-                                <a href="http://lpl.qq.com/es/news_detail.shtml?nid=9413">LPL夏季赛赛程公布 揭幕战RNGvsOMG</a>
-                            </li>
-                            <li>
-                                <a href="http://games.qq.com/a/20170605/000135.htm#p=1">魔兽世界回忆录：屠城往事 难以忘怀</a>
-                            </li>
-                            <li>
-                                <a href="http://games.sina.com.cn/ol/n/dlwyxw/2017-06-04/fyfuzmy1648406.shtml">CS：GO Minor 亚洲锦标赛解说与你讲述电竞之路</a>
-                            </li>
-                            <li>
-                                <a href="http://dota2.dj.sina.com.cn/2017-06-02/fyfuzny2463487.shtml">DOTA2震中杯2017开战在即：四大看点罗列</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #e14040; margin-right: 6px;"></i>
+                    <span style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;">作者:@Model.NewsWriter</span><br /><br />
+                    <i style="vertical-align: middle; display: inline-block; width: 3px; height: 14px; background: #ffd800; margin-right: 6px;"></i>
+                    <span style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;">关键字:   @Model.NewsKeywords.Replace(',', ' ')</span>
                 </div>
             </div>
-        </div>
+            </div>
+                <hr style="margin-bottom: 50px;">
+                <p style="text-align: left;padding-left: 40px;font-size: 1.2em;color: #000000">更多新闻></p>
+                
+                <!-- 选项卡 -->
+                <div id="notice" class="notice">
+                    <div id="title" class="title">
+                        <ul>
+                            <li class="select">
+                                <a href="LSHnews/Index/1">社会</a>
+                            </li>
+                            <li>
+                                <a href="/LSHnews/Index/8">国际</a>
+                            </li>
+                            <li>
+                                <a href="/LSHnews/Index/3">科技</a>
+                            </li>
+                            <li>
+                                <a href="/LSHnews/Index/7">娱乐</a>
+                            </li>
+                            <li>
+                                <a href="/LSHnews/Index/9">教育</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <div class="mod">
+                            <ul>
+                                @for (int i = 0; i < 4; i++)
+                                {
+                                    <li>
+                                        <a href="/XGJNewsContent/Index/@ViewBag.society[i].NewsId">@ViewBag.society[i].NewsTitle</a>
+                                    </li>
+
+                                            }
+                                        
+
+                            </ul>
+                        </div>
+                        <div class="mod" style="display: none;">
+                            <ul>
+                                @for (int i = 0; i < 4; i++)
+                                {
+                                    <li>
+                                        <a href="/XGJNewsContent/Index/@ViewBag.internaional[i].NewsId">@ViewBag.internaional[i].NewsTitle</a>
+                                    </li>
+                                                                }
+                            </ul>
+                        </div>
+                        <div class="mod" style="display: none;">
+                            <ul>
+                                @for (int i = 0; i < 4; i++)
+                                {
+                                    <li>
+                                        <a href="/XGJNewsContent/Index/@ViewBag.technology[i].NewsTitle">@ViewBag.technology[i].NewsTitle</a>
+                                    </li>
+                                                                }
+                            </ul>
+                        </div>
+                        <div class="mod" style="display: none;">
+                            <ul>
+                                @for (int i = 0; i < 4; i++)
+                                {
+                                    <li>
+                                        <a href="/XGJNewsContent/Index/@ViewBag.entertainment[i].NewsId">@ViewBag.entertainment[i].NewsTitle</a>
+                                    </li>
+                                                                }
+                            </ul>
+                        </div>
+                        <div class="mod" style="display: none;">
+                            <ul>
+                                @for (int i = 0; i < 4; i++)
+                                {
+                                    <li>
+                                        <a href="/XGJNewsContent/Index/@ViewBag.education[i].NewsId">@ViewBag.education[i].NewsTitle</a>
+                                    </li>
+                                    }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+     
+
         <footer>
             <div class="copyright">©2020新闻网站设计</div>
         </footer>
@@ -278,17 +254,17 @@
     <script>
         $(function () {
             $("#xxxxmore").click(function () {
-                var offset = $("#xxxxmore").offset();
-                m = (offset.left - 80).toString() + "px";
+                                            var offset = $("#xxxxmore").offset();
+                                            m = (offset.left - 80).toString() + "px";
                 $(".mybox").css("margin-left", m);
                 $(".mybox").slideToggle("slow");
-            })
+                                        })
 
             $(window).resize(function () {
-                var offset = $("#xxxxmore").offset();
-                m = (offset.left - 80).toString() + "px";
+                                            var offset = $("#xxxxmore").offset();
+                                            m = (offset.left - 80).toString() + "px";
                 $(".mybox").css("margin-left", m);
-            })
+                                        })
         })
 
 
@@ -298,40 +274,47 @@
             var titles = $(".title li");
             var mods = $(".mod");
             var s = 0;
-            titles.mouseover(function () {
+                                    titles.mouseover(function () {
                 var index = $(this).index();
                 $(this).addClass("select").siblings().removeClass("select");
-                mods.eq(index).css("display", "block").siblings().css("display", "none");
-                s = index;
-            })
+                                    mods.eq(index).css("display", "block").siblings().css("display", "none");
+                                    s = index;
+                                    })
 
 
             function autoPlay() {
-                s++;
-                if (s == mods.length) {
-                    s = 0;
-                }
+                                        s++;
+                                        if (s == mods.length) {
+                                            s = 0;
+                                        }
                 $(".title li").eq(s).addClass("select").siblings().removeClass("select");
-                mods.eq(s).css("display", "block").siblings().css("display", "none");
-            }
+                                        mods.eq(s).css("display", "block").siblings().css("display", "none");
+                                    }
 
-            var t = setInterval(autoPlay, 3000);
+                                    var t = setInterval(autoPlay, 3000);
 
-            titles.hover(function () {
+                                    titles.hover(function () {
                 clearInterval(t);
-            }, function () {
-                t = setInterval(autoPlay, 3000)
-            });
-            mods.hover(function () {
-                clearInterval(t);
-            }, function () {
-                t = setInterval(autoPlay, 3000)
-            });
+                                }, function () {
+                                    t = setInterval(autoPlay, 3000)
+                                });
+                                mods.hover(function () {
+                                    clearInterval(t);
+                                }, function () {
+                                    t = setInterval(autoPlay, 3000)
+                                });
         });
-
+                                jQuery(document).ready(function ($) {
+            $("a.page-btn").click(function (event) {
+                                        alert("导出成功！");
+                $("#page").wordExport(); //打印id为page的div中的所有内容
+                                    });
+                                });
 
     </script>
 
+    <script src="~/Scripts/FileSaver.js"></script>
+    <script src="~/Scripts/jquery.wordexport.js"></script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
 

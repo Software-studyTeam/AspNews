@@ -13,7 +13,6 @@ namespace AspNews.Models.cjl
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Required]
         [Display(Name = "新闻编号")]
-        [StringLength(10)]
         public string NewsId { get; set; }
 
         [Required]
@@ -49,11 +48,13 @@ namespace AspNews.Models.cjl
         [StringLength(30)]
         public string NewsKeywords { get; set; }
 
-        [Required]
+
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd-hh-mm-ss}")]
         [Display(Name = "发布时间")]
         public DateTime ReleaseTime { get; set; }
 
         [Required]
+        [DataType(DataType.MultilineText)]
         [Display(Name = "新闻内容")]
         public string NewsContent { get; set; }
 
@@ -65,7 +66,6 @@ namespace AspNews.Models.cjl
         public string AvatarUploader { get; set; }
 
 
-        [Required]
         [Display(Name = "阅读量")]
         public int ReadingNum { get; set; }
 

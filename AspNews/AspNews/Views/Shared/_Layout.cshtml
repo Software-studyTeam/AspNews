@@ -27,7 +27,15 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                    <li>@Html.ActionLink("新闻目录", "Index", "NewsDbs")</li>
+                    @if (Session["LoginUser"] != null)
+                    {
+                        if (Session["Roles"].Equals(1))
+                        {
+                            <li>@Html.ActionLink("新闻目录", "Index", "NewsDbs")</li>
+}
+
+                    }
+
                     <li>@Ajax.ActionLink("初始化数据", "InitNews", "Home", new { }, ajaxOptions, new { @class = "list-group-item" })</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -126,7 +134,7 @@
     </div>
     <hr />
     <footer>
-        <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
+        <p>&copy; @DateTime.Now.Year - News新闻网</p>
     </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
